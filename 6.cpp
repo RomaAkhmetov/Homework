@@ -17,25 +17,12 @@ typedef unsigned long long ull;
 
 int sign_to_num(char sign)
 {
-	if (sign == 'A')
-		return 1;
-	else if (sign == 'B')
-		return 2;
-	else if (sign == 'C')
-		return 3;
-	else if (sign == 'D')
-		return 4;
-	else if (sign == 'E')
-		return 5;
-	else if (sign == 'F')
-		return 6;
-	else if (sign == 'G')
-		return 7;
-	else if (sign == 'H')
-		return 8;
+	int num = sign - 'A' + 1;
+
+	if (1 <= num && num <= 8)
+		return num;
 	else
 		return -1;
-
 }
 
 int ctoi(char c)
@@ -95,7 +82,7 @@ int main()
 	if (y2 > 8 || y2 < 1)
 	{
 		cout << "ERROR";
-
+		return 0;
 	}
 
 	if (check(x1, y1, x2, y2) == true)
