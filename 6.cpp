@@ -1,4 +1,4 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -56,7 +56,7 @@ int main()
 	string s;
 	cin >> s;
 
-	if (s.size() > 5)
+	if (s.size() != 5)
 	{
 		cout << "ERROR";
 		return 0;
@@ -77,6 +77,12 @@ int main()
 		return 0;
 	}
 
+	if (s[2] != '-')
+	{
+		cout << "ERROR";
+		return 0;
+	}
+
 	int x2 = sign_to_num(s[3]);
 	if (x2 == -1)
 	{
@@ -89,7 +95,7 @@ int main()
 	if (y2 > 8 || y2 < 1)
 	{
 		cout << "ERROR";
-		return 0;
+
 	}
 
 	if (check(x1, y1, x2, y2) == true)
