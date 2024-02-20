@@ -32,10 +32,9 @@ int ctoi(char c)
 
 bool check(int x1, int y1, int x2, int y2)
 {
-	if ((abs(x1 - x2) == 2 && abs(y1 - y2) == 1) || (abs(x1 - x2) == 1 && abs(y1 - y2) == 2))
-		return true;
-	else
-		return false;
+	int dx = x1 - x2;
+	int dy = y1 - y2;
+	return dx * dx + dy * dy == 5;
 }
 
 int main()
