@@ -1,4 +1,3 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -22,40 +21,19 @@ int main()
 	int n;
 	cin >> n;
 
-	string e = "27182818284590452353602875";
-	n++;
-	int in_mind = 0;
-	while(e.size() > n)
+	string e_head = "2";
+	string e_tail = "7182818284590452353602875";
+	if (n == 0)
 	{
-		string predstr = e.substr(e.size() - 2, 1);
-		int pred = stoi(predstr);
-		string nextstr = e.substr(e.size() - 1, 1);
-		int next = stoi(nextstr);
-
-		if (next > 4)
-		{
-			pred += 1 + in_mind;	
-		}
-		else
-		{
-			pred += in_mind;
-		}
-
-		in_mind = 0;
-
-		if (pred > 9)
-		{
-			pred = 0;
-			in_mind++;
-		}
-
-		string s = to_string(pred);
-		e[e.size() - 2] = s[0];
-
-		e.erase(e.size() - 1, 1);
+		cout << 3;
+		return 0;
 	}
-	if (n > 1)
-		e.insert(1, 1, '.');
-
-	cout << e;
+	if (n < e_tail.size())
+	{
+		if (e_tail[n] > '4')
+		{
+			e_tail[n - 1] += 1;
+		}
+	}
+	cout << e_head << '.' << e_tail.substr(0, n);
 }
