@@ -1,4 +1,4 @@
-﻿#define _USE_MATH_DEFINES 
+#define _USE_MATH_DEFINES 
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -20,10 +20,10 @@ typedef unsigned long long ull;
 
 int main()
 {
-	int a1, a2, n;
+	double a1, a2, n;
 	cin >> a1 >> a2 >> n;
 
-	int d = a2 - a1;
-	int an = a1 + d * (n - 1);
+	double d = a2 - a1;
+	double an = a1 + d * (n - 1);
 	cout << an;
 }
