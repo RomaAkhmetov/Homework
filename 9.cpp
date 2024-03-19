@@ -1,4 +1,4 @@
-﻿#define _USE_MATH_DEFINES 
+#define _USE_MATH_DEFINES 
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -17,7 +17,56 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 
+ll positive_integers_sum(const vector <ll> &a)
+{
+	ll sum = 0;
+	for (auto &el1 : a)
+	{
+		if (el1 > 0)
+			sum += el1;
+	}
+	return sum;
+}
 
+ll get_indmn(const vector <ll>& a)
+{
+	ll mn = 1e9;
+	ll indmn = -1;
+	for (ll i = 0; i < a.size(); i++)
+	{
+		if (mn > a[i])
+		{
+			mn = a[i];
+			indmn = i;
+		}
+	}
+	return indmn;
+}
+
+ll get_indmx(const vector <ll>& a)
+{
+	ll mx = -1e9;
+	ll indmx = -1;
+	for (ll i = 0; i < a.size(); i++)
+	{
+		if (mx < a[i])
+		{
+			mx = a[i];
+			indmx = i;
+		}
+	}
+	return indmx;
+}
+
+ll get_mul(const vector <ll>& a, ll indmn, ll indmx)
+{
+	ll pr = 1;
+	for (int j = min(indmn, indmx) + 1; j < max(indmx, indmn); j++)
+	{
+		pr *= a[j];
+	}
+	return pr;
+}
 
 int main()
 {
@@ -25,49 +74,13 @@ int main()
 	cin >> n;
 
 	vector <ll> a(n);
-	ll indmn = 0;
-	ll indmx = 0;
-	ll mn = 1e9;
-	ll mx = 0;
-	vector <ll> N;
-
-	for (ll i = 0; i < n; i++)
+	for (auto & el : a)
 	{
-		cin >> a[i];
+		cin >> el;
+	}
+	
+	cout << positive_integers_sum(a) << ' ' << get_mul(a, get_indmn(a), get_indmx(a));
+}
 
-		if (mn > a[i])
-		{
-			mn = a[i];
-			indmn = i;
-		}
-		else if (mx < a[i])
-		{
-			mx = a[i];
-			indmx = i;
-		}
 
-		if (a[i] > 0)
-			N.push_back(a[i]);
-	}
-	ll sum = 0;
-	for (ll j = 0; j < N.size(); j++)
-	{
-		sum += N[j];
-	}
-	ll r = abs(indmx - indmn) - 1;
-	if (r == 1)
-		cout << sum << ' ' << a[indmn + 1];
-	else if (r == 0)
-		cout << sum << ' ' << 0;
-	else
-	{
-		ll pr = 1;
-		ll f = min(indmn, indmx) + 1;
-		while (f < max(indmn, indmx))
-		{
-			pr *= a[f];
-			f++;
-		}
-		cout << sum << ' ' << pr;
-	}
-}                         
+                      
