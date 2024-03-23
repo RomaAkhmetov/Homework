@@ -48,7 +48,7 @@ int main()
 	}
 	cout << endl;
 
-	if (ch.size() > not_ch.size())
+	if (ch.size() >= not_ch.size())
 	{
 		cout << "YES";
 	}
