@@ -1,4 +1,4 @@
-﻿#define _USE_MATH_DEFINES 
+#define _USE_MATH_DEFINES 
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -37,34 +37,26 @@ int main()
 			not_ch.push_back(m[i]);
 	}
 
+	for (ll g = 0; g < not_ch.size(); g++)
+	{
+		cout << not_ch[g] << ' ';
+	}
+	cout << endl;
+	for (ll z = 0; z < ch.size(); z++)
+	{
+		cout << ch[z] << ' ';
+	}
+	cout << endl;
+
 	if (ch.size() > not_ch.size())
 	{
-		for (ll j = 0; j < not_ch.size(); j++)
-		{
-			cout << not_ch[j] << ' ';
-		}
-		cout << endl;
-		for (ll o = 0; o < ch.size(); o++)
-		{
-			cout << ch[o] << ' ';
-		}
-		cout << endl;
 		cout << "YES";
 	}
 	else
 	{
-		for (ll g = 0; g < not_ch.size(); g++)
-		{
-			cout << not_ch[g] << ' ';
-		}
-		cout << endl;
-		for (ll z = 0; z < ch.size(); z++)
-		{
-			cout << ch[z] << ' ';
-		}
-		cout << endl;
 		cout << "NO";
 	}
 }
+
 
 
