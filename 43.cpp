@@ -1,4 +1,4 @@
-﻿#define _USE_MATH_DEFINES 
+#define _USE_MATH_DEFINES 
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -11,13 +11,10 @@
 #include <iomanip>
 #include <sstream>
 
-
 using namespace std;
 
 typedef long long ll;
 typedef unsigned long long ull;
-
-
 
 int main()
 {
@@ -34,7 +31,7 @@ int main()
 	}
 	ull pl1 = 0;
 	vector <ull> p2;
-	for (ull j = p.size() - 1; j > 0; j--)
+	for (ull j = 0; j < p.size(); j++)
 	{
 		if (p[j] == '0')
 		{
@@ -46,6 +43,9 @@ int main()
 			pl1 = 0;
 		}
 	}
+	if (pl1 > 0)
+		p2.push_back(pl1);
+
 	ull mx = 0;
 	for (ull i = 0; i < p2.size(); i++)
 	{
@@ -53,4 +53,5 @@ int main()
 			mx = p2[i];
 	}
 	cout << mx;
+
 }
