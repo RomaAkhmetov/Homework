@@ -1,4 +1,4 @@
-﻿#define _USE_MATH_DEFINES 
+#define _USE_MATH_DEFINES
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -21,14 +21,6 @@ int main()
 	ll m, n;
 	cin >> m >> n;
 
-	if (m == 1 || n == 1)
-	{
-		cout << 0;
-		return 0;
-	}
-
-	ll vertical = (n - 2) * (m - 1);
-	ll gorizontal = (n - 1) * (m - 2);
-	ll sum = vertical + gorizontal + 1;
-	cout << sum;
+	ll res = (((n - 1) * m) + ((m - 1) * n)) - (n * m - 1);
+	cout << res;
 }
