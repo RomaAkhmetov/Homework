@@ -1,4 +1,4 @@
-﻿#define _USE_MATH_DEFINES 
+#define _USE_MATH_DEFINES
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -16,30 +16,21 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 
-int main()
+
+
+int main() 
 {
 	ll n, i, j;
 	cin >> n >> i >> j;
 
-	ll s = i;
-	vector <ll> w1;
-	while (s != j)
+	if (abs(i - j) <= 1 || n <= 2)
 	{
-		if (s > n)
-			s = 1;
-		w1.push_back(s);
-		s++;
+		cout << 0;
+		return 0;
 	}
-
-	vector <ll> w2;
-	ll s1 = i;
-	while (s1 != j)
-	{
-		if (s1 < 1 )
-			s1 = n;
-		w2.push_back(s1);
-		s1--;
-	}
-
-	cout << min(w1.size(), w2.size())-1;
+	ll i1 = 0;
+	ll j1 = max(i,j) - min(i,j);
+	ll raz = j1 - 1;
+	ll raz2 = n - j1 - 1;
+	cout << min(raz, raz2);
 }
