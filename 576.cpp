@@ -1,4 +1,4 @@
-﻿#define _USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -32,15 +32,20 @@ int main()
 	ll n;
 	cin >> n;
 
-	ll cnt = 0;
-	ll n2 = n;
-	while (n2 != 0)
+	if (n == 1)
+		cout << 0;
+	else
 	{
-		n2--;
-		ll r = gcd(n, n2);
-		if (r == 1)
-			cnt++;
-		
+		ll cnt = 0;
+		ll n2 = n;
+		while (n2 != 0)
+		{
+			n2--;
+			ll r = gcd(n, n2);
+			if (r == 1)
+				cnt++;
+
+		}
+		cout << cnt;
 	}
-	cout << cnt;
 }
