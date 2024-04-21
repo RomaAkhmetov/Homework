@@ -1,4 +1,4 @@
-﻿#define _USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -28,9 +28,20 @@ int main()
 	{
 		cin >> a[i];
 
-		if (a[i] > 0)
+		if (i == a.size() - 1 && a[i] > 0)
+		{
 			cnt++;
-		else if (a[i] <= 0)
+			r.push_back(cnt);
+			break;
+		}
+		else if (i == a.size() - 1 && a[i] <= 0)
+		{
+			r.push_back(cnt);
+			break;
+		}
+		if (a[i] > 0 && i != a.size() - 1)
+			cnt++;
+		else if (a[i] <= 0 && i != a.size() - 1)
 		{
 			r.push_back(cnt);
 			cnt = 0;
