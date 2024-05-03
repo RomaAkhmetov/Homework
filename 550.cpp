@@ -1,4 +1,4 @@
-﻿#define _USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -25,12 +25,12 @@ int main()
 
 	if ((n % 400 == 0) || (n % 4 == 0 && n % 100 != 0))
 	{
-		cout << 12 << '/' << "09" << '/' << n;
+		cout << 12 << '/' << "09" << '/' << setfill('0') << setw(4) << n;
 		return 0;
 	}
 	else
 	{
-		cout << 13 << '/' << "09" << '/' << n;
+		cout << 13 << '/' << "09" << '/' << setfill('0') << setw(4) << n;
 		return 0;
 	}
 }
