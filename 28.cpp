@@ -1,4 +1,4 @@
-﻿#define _USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -29,12 +29,49 @@ int main()
 
 	if (y1 == y2)
 	{
-		cout << xa << ' ' << ya * -1;
-		return 0;
+		ll cnt1 = 0;
+		ll tya = ya;
+		while (tya != y1)
+		{
+			cnt1++;
+			if (tya > y1)
+				tya--;
+			else
+				tya++;
+		}
+		if (ya > y1)
+		{
+			ll r = y1 - cnt1;
+			cout << xa << ' ' << r;
+		}
+		else
+		{
+			ll r = y1 + cnt1;
+			cout << xa << ' ' << r;
+		}
 	}
 	else
 	{
-		cout << xa * -1 << ' ' << ya;
+		ll cnt = 0;
+		ll txa = xa;
+		while (txa != max(x1, x2))
+		{
+			cnt++;
+			if (txa > max(x1, x2))
+				txa--;
+			else
+				txa++;
+		}
+		if (xa > max(x1, x2))
+		{
+			ll res = max(x1, x2) - cnt;
+			cout << res << ' ' << ya;
+		}
+		else
+		{
+			ll res = max(x1, x2) + cnt;
+			cout << res << ' ' << ya;
+		}
 		return 0;
 	}
 }
