@@ -1,4 +1,4 @@
-﻿#define _USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -33,7 +33,7 @@ int main()
 		if (s[i] == '2')
 		{
 			begin--;
-			if (begin != mx && find(v.begin(), v.end(), begin) == end(v))
+			if (find(v.begin(), v.end(), begin) == end(v))
 			{
 				mx++;
 				v.push_back(begin);
@@ -42,7 +42,7 @@ int main()
 		else if(s[i] == '1')
 		{
 			begin++;
-			if (begin != mx && find(v.begin(), v.end(), begin) == end(v))
+			if (find(v.begin(), v.end(), begin) == end(v))
 			{
 				mx++;
 				v.push_back(begin);
