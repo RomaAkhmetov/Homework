@@ -1,4 +1,4 @@
-﻿#define _USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
 #include <algorithm>
 #include <cmath>
 #include <vector>
@@ -23,8 +23,21 @@ int main()
 	ull n;
 	cin >> n;
 
-	ull Fn = round((pow((1 + sqrt(5)) / 2, n + 1) - pow((1 - sqrt(5)) / 2, n + 1)) / sqrt(5));
-	cout << Fn % 10;
+	if (n == 1 || n == 0)
+		cout << 1;
+	else
+	{
+		ull i = 1;
+		ull j = 1;
+		ull res = 0;
+		for (ull u = 2; u <= n; u++)
+		{
+			res = (i + j) % 10;
+			i = j;
+			j = res;
+		}
+		cout << res;
+	}
 }
 
 //Z
