@@ -28,20 +28,15 @@ int main()
 	ll l;
 	cin >> l;
 
-	vector <vector<ll>> v;
 	for (ll i = 0; i < n; i++)
 	{
-		vector <ll> c(2);
-		for (ll j = 0; j < 2; j++)
-			cin >> c[j];
-		v.push_back(c);
-	}
-	for (ll p = 0; p < v.size(); p++)
-	{
-		double s = sqrt(pow(v[p][0] - b1, 2.0) + pow(v[p][1] - b2, 2.0));
+		ll xi, yi;
+		cin >> xi >> yi;
+
+		double s = sqrt(pow(xi - b1, 2) + pow(yi - b2, 2));
 		if (s <= l)
 		{
-			cout << p + 1;
+			cout << i + 1;
 			return 0;
 		}
 	}
