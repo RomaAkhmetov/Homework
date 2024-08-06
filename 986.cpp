@@ -1,4 +1,4 @@
-﻿#define _USE_MATH_DEFINES_
+#define _USE_MATH_DEFINES_
 #include <algorithm>
 #include <cmath>
 #include <vector>
